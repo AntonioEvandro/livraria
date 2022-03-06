@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Livro {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private String titulo;
 	private Long isbn;

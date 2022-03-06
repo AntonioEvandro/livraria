@@ -1,5 +1,7 @@
 package com.ifce.br.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,11 @@ public class LivroService {
 	}
 	public Iterable<Livro>listarLivro(){
 		return livroRepository.findAll();
+	}
+	public void excluir(Long id) {
+		livroRepository.deleteById(id);
+	}
+	public Optional<Livro> retornarPeloId(Long codigo) {
+		return livroRepository.findById(codigo);
 	}
 }
