@@ -15,4 +15,7 @@ public class LivroService {
 	public void cadastrarLivro(Livro livro) {
 		livroRepository.save(livro);
 	}
+	public Iterable<Livro>listarLivro(){
+		return livroRepository.findAll();
+	}
 }

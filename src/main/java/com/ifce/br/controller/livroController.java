@@ -2,6 +2,7 @@ package com.ifce.br.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -29,6 +30,11 @@ public class livroController {
 		System.out.println(livro.getAutor());
 		livroService.cadastrarLivro(livro);
 		return "Inicio";
+	}
+	@GetMapping("/listar/livro")
+	public String listarlivro(Model model) {
+		model.addAttribute("livro", livroService.listarLivro());
+		return "Listagem_livro";
 	}
 }
 
