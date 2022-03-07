@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cadastrar cliente</title>
+</head>
+
+<body>
+
+	<header>
+		<h1><a href="/inicio">Livraria</a></h1>
+	</header>
+
+
+	<form action="/cadastro/cliente/salvar" method="POST" th:object="${cliente}" enctype="multipart/form-data">
+		<input type="hidden" th:field="*{codigo}">
+		Nome: <input type="text" th:field="*{nome}"> <br>
+		CPF: <input type="text" th:field="*{cpf}"> <br>
+		Profissão: <input type="text" th:field="*{profissao}"> <br>
+		Data de nascimento: <input type="text" th:field="*{dataNasc}"> <br>
+		Imagem: <input type="file" name="imagem"><br>
+
+		<br>
+
+		<input type="submit" class="btn btn-danger" value="Cadastrar">
+
+	</form>
+
+</body>
+
+</html>

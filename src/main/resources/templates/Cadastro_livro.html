@@ -13,19 +13,25 @@
 	</header>
 
 
-	<form action="/cadastro/livro/salvar" method="POST" th:object="${livro}">
+	<form action="/cadastro/livro/salvar" method="POST" th:object="${livro}" enctype="multipart/form-data">
 		<input type="hidden" th:field="*{codigo}">
 		Titulo: <input type="text" th:field="*{titulo}"> <br>
 		ISBN: <input type="text" th:field="*{isbn}"> <br>
 		Autor: <input type="text" th:field="*{autor}"> <br>
 		Preço: <input type="text" th:field="*{preco}"> <br>
-		<!--Foto: <input type=""><br>-->
+		Imagem: <input type="file" name="imagem"><br>
 
 		<br>
 
-		<input type="submit" class="btn btn-danger" value="Cadastrar">
+		<input type="submit" value="Cadastrar">
+
+		<!--<button th:if="${livro.codigo == null}" th:text="Cadastrar"> </button>
+		
+		<button th:if="${livro.codigo != null}" th:text="Atualizar"> </button>-->
 
 	</form>
+
+	<src=" /js/bootstrap.min.js" />
 
 </body>
 

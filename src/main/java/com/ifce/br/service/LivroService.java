@@ -4,9 +4,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ifce.br.data.LivroRepository;
 import com.ifce.br.model.Livro;
+import com.ifce.br.util.LivrariaFileUtils;
 
 @Service
 public class LivroService {
@@ -14,7 +16,9 @@ public class LivroService {
 	@Autowired
 	private LivroRepository livroRepository;
 	
-	public void cadastrarLivro(Livro livro) {
+	public void cadastrarLivro(Livro livro, MultipartFile imagem) {
+		String caminho = "imagens/" + livro.getTitulo() + ".png";
+		LivrariaFileUtils.salvarImagem(caminho, imagem);
 		livroRepository.save(livro);
 	}
 	public Iterable<Livro>listarLivro(){

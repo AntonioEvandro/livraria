@@ -22,6 +22,7 @@
 				<th scope="col">ISBN</th>
 				<th scope="col">Autor</th>
 				<th scope="col">Preço</th>
+				<th scope="col">Foto</th>
 				<!-- Espaço pra tabela não ficar feia :)-->
 				<th scope="col"></th>
 				<th scope="col"></th>
@@ -34,6 +35,7 @@
 				<td th:text="${livro.isbn}"> </td>
 				<td th:text="${livro.autor}"> </td>
 				<td th:text="${livro.preco}"> </td>
+				<td><img width="200" height="100" th:src="@{'/imagens/'+${livro.titulo}+.png}"/></td>
 				<td><a th:href="@{/atualizar/livro/{codigo}(codigo = ${livro.codigo})}" class="btn btn-primary">Atualizar</a></td>
 				<td><a th:href="@{/excluir/livro/{codigo}(codigo = ${livro.codigo})}" class="btn btn-danger">Deletar</a></td>
 			</tr>

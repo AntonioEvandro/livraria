@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ifce.br.model.Livro;
 import com.ifce.br.service.LivroService;
@@ -30,10 +32,10 @@ public class livroController {
 	}
 	
 	@PostMapping("cadastro/livro/salvar")
-	public String cadastrarLivro(Livro livro) {
-		System.out.println(livro.getAutor());
-		livroService.cadastrarLivro(livro);
-		return "Inicio";
+	public String cadastrarLivro(Livro livro, @RequestParam(value="imagem") MultipartFile imagem) {
+		//System.out.println(livro.getAutor());
+		livroService.cadastrarLivro(livro, imagem);
+		return "Sucesso";
 	}
 	@GetMapping("/listar/livro")
 	public String listarlivro(Model model) {
