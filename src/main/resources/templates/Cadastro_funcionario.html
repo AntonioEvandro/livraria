@@ -23,7 +23,9 @@
 
 		<br>
 
-		<input type="submit" class="btn btn-danger" value="Cadastrar">
+		<button th:if="${codigo == null}" th:text="Cadastrar"> </button>
+		<button th:unless="${codigo == null}" th:text="Atualizar"> </button>
+		<!--<input type="submit" class="btn btn-danger" value="Cadastrar">-->
 
 	</form>
 
