@@ -4,32 +4,80 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastrar livro</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-
-	<header>
-		<h1><a href="/inicio">Livraria</a></h1>
+	<header class="p-5 bg-black text-white text-center">
+		<h1><a class="nav-link link-light" href="/inicio">Livraria</a></h1>
 	</header>
 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="/inicio">Inicio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="navbar-brand nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cadrastrar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/cadastro/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/cadastro/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/cadastro/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Listar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/listar/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/listar/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/listar/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-	<form action="/cadastro/livro/salvar" method="POST" th:object="${livro}" enctype="multipart/form-data">
-		<input type="hidden" th:field="*{codigo}">
-		Titulo: <input type="text" th:field="*{titulo}"> <br>
-		ISBN: <input type="text" th:field="*{isbn}"> <br>
-		Autor: <input type="text" th:field="*{autor}"> <br>
-		Preço: <input type="text" th:field="*{preco}"> <br>
-		Imagem: <input type="file" name="imagem"><br>
+	<div class="container mt-5">
+		<div class="row">
+			<form action="/cadastro/livro/salvar" method="POST" th:object="${livro}" enctype="multipart/form-data">
+				<input type="hidden" th:field="*{codigo}">
+				<div class="mb-3 mt-3 col-9 mx-auto">
+					<label for="text" class="form-label">Titulo:</label>
+					<input type="text" th:field="*{titulo}" class="form-control" placeholder="Titulo"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">ISBN:</label>
+					<input type="text" th:field="*{isbn}" class="form-control" placeholder="ISBN"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">Autor:</label>
+					<input type="text" th:field="*{autor}" class="form-control" placeholder="Autor"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">Preço:</label>
+					<input type="text" th:field="*{preco}" class="form-control" placeholder="Preço"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="formFile" class="form-label">Imagem:</label>
+					<input type="file" name="imagem" class="form-control"><br>
+				</div>
 
-		<br>
+				<br>
+				<div class="d-grid gap-2 col-2 mx-auto">
+					<button th:if="${codigo == null}" th:text="Cadastrar" class="btn btn-secondary btn-lg"> </button>
+					<button th:unless="${codigo == null}" th:text="Atualizar" class="btn btn-secondary btn-lg"></button>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
-		<button th:if="${codigo == null}" th:text="Cadastrar"> </button>
-		<button th:unless="${codigo == null}" th:text="Atualizar"> </button>
-		<!--<input type="submit" value="Cadastrar">-->
-
-	</form>
-
+	<footer class="mt-5 p-4 bg-dark text-white text-center">
+		<p>© Antonio Evandro 2022, <a href="#" class="link-light">Antonio Evandro</a>.</p>
+	</footer>
+	
 	<src=" /js/bootstrap.min.js" />
 
 </body>

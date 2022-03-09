@@ -5,41 +5,76 @@
 	<meta charset="UTF-8">
 	<title>Lista de clientes</title>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-
-	<header>
-		<h1><a href="/inicio">Livraria</a></h1>
+	<header class="p-5 bg-black text-white text-center">
+		<h1><a class="nav-link link-light" href="/inicio">Livraria</a></h1>
 	</header>
 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="/inicio">Inicio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cadrastrar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/cadastro/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/cadastro/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/cadastro/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="navbar-brand nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Listar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/listar/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/listar/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/listar/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-	<table class="table table-dark table-striped">
-		<thead>
-			<tr>
-				<th scope="col">Codigo</th>
-				<th scope="col">Nome</th>
-				<th scope="col">CPF</th>
-				<th scope="col">Profissão</th>
-				<th scope="col">Data de nascimento</th>
-				<th scope="col">Foto</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="cliente:${cliente}">
-				<td th:text="${cliente.codigo}"> </td>
-				<td th:text="${cliente.nome}"> </td>
-				<td th:text="${cliente.cpf}"> </td>
-				<td th:text="${cliente.profissao}"> </td>
-				<td th:text="${{cliente.dataNasc}}"> </td>
-				<td><img width="200" height="100" th:src="@{'/imagens/'+${cliente.nome}+.png}"/></td>
-				<td><a th:href="@{/atualizar/cliente/{codigo}(codigo = ${cliente.codigo})}" class="btn btn-primary">Atualizar</a></td>
-				<td><a th:href="@{/excluir/cliente/{codigo}(codigo = ${cliente.codigo})}" class="btn btn-danger">Deletar</a></td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="container mt-5" style="min-height: 720px;">
+		<div class="row">
+			<table class="table table-dark table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Codigo</th>
+						<th scope="col">Nome</th>
+						<th scope="col">CPF</th>
+						<th scope="col">Profissão</th>
+						<th scope="col">Data de nascimento</th>
+						<th scope="col">Foto</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cliente:${cliente}">
+						<td th:text="${cliente.codigo}"> </td>
+						<td th:text="${cliente.nome}"> </td>
+						<td th:text="${cliente.cpf}"> </td>
+						<td th:text="${cliente.profissao}"> </td>
+						<td th:text="${{cliente.dataNasc}}"> </td>
+						<td><img width="200" height="100" th:src="@{'/imagens/'+${cliente.nome}+.png}" /></td>
+						<td><a th:href="@{/atualizar/cliente/{codigo}(codigo = ${cliente.codigo})}"
+								class="btn btn-primary">Atualizar</a></td>
+						<td><a th:href="@{/excluir/cliente/{codigo}(codigo = ${cliente.codigo})}"
+								class="btn btn-danger">Deletar</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<footer class="mt-5 p-3 bg-dark text-white text-center">
+		<p>© Antonio Evandro 2022, <a href="#" class="link-light">Antonio Evandro</a>.</p>
+	</footer>
 
 	<src=" /js/bootstrap.min.js">
 </body>

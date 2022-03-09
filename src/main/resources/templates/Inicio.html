@@ -4,19 +4,117 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Página Inicial</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-	<header>
-		<h1><a href="/inicio">Livraria</a></h1>
+	<header class="p-5 bg-black text-white text-center">
+		<h1><a class="nav-link link-light" href="/inicio">Livraria</a></h1>
 	</header>
 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item ">
+					<a class="navbar-brand nav-link" href="/inicio">Inicio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cadrastrar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/cadastro/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/cadastro/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/cadastro/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Listar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/listar/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/listar/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/listar/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-	<h3>Cadrastrar</h3>
-	<a href="/cadastro/livro">livro</a> <a href="/cadastro/cliente"> cliente</a> <a href="/cadastro/funcionario"> funcionario</a>
-	<h3>Listar</h3>
-	<a href="/listar/livro">livro</a> <a href="/listar/cliente"> cliente</a> <a href="/listar/funcionario"> funcionario</a>
-	
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="container p-3 bg-dark text-white">
+					<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+					<p>
+						Lacinia metus volutpat montes adipiscing nullam facilisis. Tempor magnis parturient aliquam
+						mollis
+						lectus felis! Purus; mus sit egestas? Potenti, nam consequat amet aptent sollicitudin
+						sollicitudin
+						velit
+						est amet arcu. Sodales, laoreet luctus scelerisque maecenas venenatis diam tellus platea! Per,
+						hac
+						euismod eros ac. Suspendisse cum fermentum justo, elementum penatibus eros himenaeos. Adipiscing
+						nam
+						platea est eleifend leo fringilla. Nam habitasse taciti nam duis.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<h3>Neque solum ea communia, verum etiam paria esse dixerunt.</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duarum enim vitarum nobis erunt instituta
+					capienda. Duo Reges: constructio interrete. </p>
+
+				<p>Legimus tamen Diogenem, Antipatrum, Mnesarchum, Panaetium, multos alios in primisque familiarem
+					nostrum Posidonium. Amicitiam autem adhibendam esse censent, quia sit ex eo genere, quae prosunt.
+					Omnia contraria, quos etiam insanos esse vultis. In quo etsi est magnus, tamen nova pleraque et
+					perpauca de moribus. Tum mihi Piso: Quid ergo? Nam de summo mox, ut dixi, videbimus et ad id
+					explicandum disputationem omnem conferemus. </p>
+
+
+				<p>
+					Ac conubia vulputate sapien feugiat libero venenatis. Tellus primis maecenas donec fames eget
+					quam
+					leo
+					hendrerit nascetur urna accumsan. Phasellus vestibulum dolor euismod convallis lacinia vitae
+					dictumst
+					non dolor molestie inceptos. Sollicitudin sapien tempus purus est vitae cursus suspendisse.
+					Habitant velper, maecenas nibh feugiat! Rutrum velit iaculis quis et aliquam justo taciti a auctor?
+					Nibh,
+					vestibulum
+					hendrerit platea tellus quam. Urna habitasse ridiculus augue proin himenaeos vulputate vivamus
+					lectus.
+					Tellus ultricies ullamcorper ligula integer lobortis. Tellus.
+				</p>
+				<p>
+					Sem maecenas ac luctus sem magnis ut porttitor. Neque habitant auctor nisi porta cum parturient
+					placerat
+					amet cursus condimentum molestie? Eleifend condimentum nisl viverra eget suscipit nullam morbi
+					fringilla
+					pharetra. Senectus vivamus eu sem. Molestie torquent litora quis nulla accumsan sem odio urna
+					nisi
+					varius ad suspendisse? Penatibus elementum natoque risus nullam laoreet tempor ac nulla
+					porttitor eu
+					placerat. Bibendum condimentum vivamus aptent sodales?
+				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Quis Aristidem non mortuum diligit?</b>
+					<i>Traditur, inquit, ab Epicuro ratio neglegendi doloris.</i> Bonum incolumis acies: misera
+					caecitas. Quis hoc dicit? <i>Duo Reges: constructio interrete.</i> Paulum, cum regem Persem captum
+					adduceret, eodem flumine invectio?
+				</p>
+
+				<p>Etsi ea quidem, quae adhuc dixisti, quamvis ad aetatem recte isto modo dicerentur. <b>Ipse Epicurus
+						fortasse redderet, ut Sextus Peducaeus, Sex.</b> <b>Non igitur bene.</b> Is es profecto tu.
+					Innumerabilia dici possunt in hanc sententiam, sed non necesse est. </p>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="mt-5 p-3 bg-dark text-white text-center">
+		<p>© Antonio Evandro 2022, <a href="#" class="link-light">Antonio Evandro</a>.</p>
+	</footer>
+
+	<src=" /js/bootstrap.min.js" />
 
 </body>
 

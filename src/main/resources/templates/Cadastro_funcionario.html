@@ -4,31 +4,84 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastrar funcionário</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-
-	<header>
-		<h1><a href="/inicio">Livraria</a></h1>
+	<header class="p-5 bg-black text-white text-center">
+		<h1><a class="nav-link link-light" href="/inicio">Livraria</a></h1>
 	</header>
 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="/inicio">Inicio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="navbar-brand nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cadrastrar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/cadastro/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/cadastro/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/cadastro/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Listar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/listar/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/listar/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/listar/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-	<form action="/cadastro/funcionario/salvar" method="POST" th:object="${funcionario}" enctype="multipart/form-data">
-		<input type="hidden" th:field="*{codigo}">
-		Nome: <input type="text" th:field="*{nome}"> <br>
-		CPF: <input type="text" th:field="*{cpf}"> <br>
-		Salário: <input type="text" th:field="*{salario}"> <br>
-		Data de nascimento: <input type="text" th:field="*{dataNasc}"> <br>
-		Imagem: <input type="file" name="imagem"><br>
 
-		<br>
+	<div class="container mt-5">
+		<div class="row">
+			<form action="/cadastro/funcionario/salvar" method="POST" th:object="${funcionario}"
+				enctype="multipart/form-data">
+				<input type="hidden" th:field="*{codigo}">
+				<div class="mb-3 mt-3 col-9 mx-auto">
+					<label for="text" class="form-label">Nome:</label>
+					<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">CPF:</label>
+					<input type="text" th:field="*{cpf}" class="form-control" placeholder="CPF"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">Salário:</label>
+				<input type="text" th:field="*{salario}" class="form-control" placeholder="Salário"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="text" class="form-label">Data de nascimento:</label>
+					<input type="text" th:field="*{dataNasc}" class="form-control" placeholder="Data de nascimento"> <br>
+				</div>
+				<div class="mb-3 col-9 mx-auto">
+					<label for="formFile" class="form-label">Imagem:</label>
+					<input type="file" name="imagem" class="form-control"><br>
+				</div>
 
-		<button th:if="${codigo == null}" th:text="Cadastrar"> </button>
-		<button th:unless="${codigo == null}" th:text="Atualizar"> </button>
-		<!--<input type="submit" class="btn btn-danger" value="Cadastrar">-->
 
-	</form>
+				<br>
+				<div class="d-grid gap-2 col-2 mx-auto">
+					<button th:if="${codigo == null}" th:text="Cadastrar" class="btn btn-secondary btn-lg"> </button>
+					<button th:unless="${codigo == null}" th:text="Atualizar" class="btn btn-secondary btn-lg"></button>
+				</div>
+				<!--<input type="submit" class="btn btn-danger" value="Cadastrar">-->
+			</form>
+		</div>
+	</div>
 
+	<footer class="mt-5 p-4 bg-dark text-white text-center">
+		<p>© Antonio Evandro 2022, <a href="#" class="link-light">Antonio Evandro</a>.</p>
+	</footer>
+
+	<src=" /js/bootstrap.min.js">
 </body>
 
 </html>

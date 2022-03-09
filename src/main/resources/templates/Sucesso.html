@@ -4,19 +4,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Página Inicial</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-	<header>
-		<h1><a href="/inicio">Livraria</a></h1>
+	<header class="p-5 bg-black text-white text-center">
+		<h1><a class="nav-link link-light" href="/inicio">Livraria</a></h1>
 	</header>
-	
-	<h2>Cadastro realizado com sucesso!</h2><br>
 
-	<h3>Cadrastrar</h3>
-	<a href="/cadastro/livro">livro</a> <a href="/cadastro/cliente"> cliente</a> <a href="/cadastro/funcionario"> funcionario</a>
-	<h3>Listar</h3>
-	<a href="/listar/livro">livro</a> <a href="/listar/cliente"> cliente</a> <a href="/listar/funcionario"> funcionario</a>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item ">
+					<a class="navbar-brand nav-link" href="/inicio">Inicio</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cadrastrar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/cadastro/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/cadastro/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/cadastro/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Listar</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="/listar/livro">Livro</a></li>
+						<li><a class="dropdown-item" href="/listar/cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="/listar/funcionario">Funcionário</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container mt-5 mx-auto" style="min-height: 720px;">
+	<h3 class="text-center">Cadastro realizado com sucesso!</h3><br>
+	</div>
+
+	<footer class="mt-5 p-4 bg-dark text-white text-center">
+		<p>© Antonio Evandro 2022, <a href="#" class="link-light">Antonio Evandro</a>.</p>
+	</footer>
+
+	<src=" /js/bootstrap.min.js" />	
 
 </body>
 
